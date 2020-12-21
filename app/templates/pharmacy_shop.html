@@ -1,0 +1,51 @@
+{% extends "pharmacy_view.html"%}
+{% from "bootstrap/form.html" import render_form, render_field %}
+
+{%block title%}
+
+{% endblock %}
+
+{% block content %}
+
+{% if search %}
+
+    {{ render_form(search_form)}}
+    
+{% endif %}
+
+   {% for prod in products %}
+       
+    <div class="card h-100">
+        <div class="card-body">
+            <h4 class="card-title">{{prod.medicine.m_medicine}}</h4>
+            <h4 class="card-subtitle">Type: {{prod.medicine.category}}</h4>
+            <p class="card-text">
+                In Stock: {{prod.plant_inven.stock_quant}} |
+                Unit Price: {{prod.plant_inven.unit_price}} |
+                Remaining:<span id="rem-{{prod.plant_inven.m_id}}"> {{prod.plant_inven.stock_quant}} </span> |
+                In Cart: <span id="cart-{{prod.plant_inven.m_id}}">0</span></p>
+               <p><span id="errors" style="color:red"></span></p>
+            </p>
+            <button class="btn btn-outline-primary" id="dec-{{prod.plant_inven.m_id}}" onclick="decrement(this.id)">-</button>
+            <input type="text" id="quant-{{prod.plant_inven.m_id}}" size="4">
+            <button class="btn btn-outline-primary" id="inc-{{prod.plant_inven.m_id}}" onclick="increment(this.id)">+</button>
+        </div>
+    </div>
+    
+   {% endfor %} 
+
+{% if checkout %}
+
+    {{ render_form(checkout_form)}}
+
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{{url_for('static', filename='shop_helpers.js')}}"></script>
+    
+{% endblock  %}
+
+

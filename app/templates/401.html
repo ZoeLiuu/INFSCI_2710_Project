@@ -1,0 +1,29 @@
+{%extends "base.html"%}
+{% from 'bootstrap/nav.html' import render_nav_item %}
+
+{% block navbar %}
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="{{url_for('index')}}">SmartPharm</a>
+        <ul class="nav navbar-nav">
+            {{ render_nav_item('patient_register', 'patient registration') }}
+            {{ render_nav_item('doctor_register', 'doctor registration') }}
+            {{ render_nav_item('pharmacy_register', 'pharmacy registration') }}
+            {{ render_nav_item('plant_register', 'plant registration') }}
+            {{ render_nav_item('login', 'login') }}
+            {{ render_nav_item('logout', 'logout') }}
+        </ul>
+    </div>
+</nav>
+
+{% endblock  %}
+
+{% block content %}
+
+ <img src="{{url_for('static', filename='unauthorized.jpg')}}" alt="401 error" style="max-width: 100%; height: auto;">
+    
+ <h3>Please Log in First</h3>
+{% endblock  %}

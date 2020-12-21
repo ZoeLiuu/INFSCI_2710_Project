@@ -1,0 +1,16 @@
+{% extends "pharmacy_view.html"%}
+
+{% block content %}
+
+<ul class = "list-group">
+
+    {% for shipment in shipments %}
+
+    <li class="list-group-item">Shipment number {{shipment.shipments.s_id}} from {{shipment.shipments.pp_id}} with status {{shipment.shipments.s_status}} containing {{shipment.shipments.s_Quant}} {{shipment.medicine.m_medicine}}</li>
+        
+    {% endfor %}
+
+</ul>
+
+{% endblock  %}
+    

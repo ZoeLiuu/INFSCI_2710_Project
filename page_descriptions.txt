@@ -1,0 +1,31 @@
+    Patient
+·         Login
+
+·         Make an appointment (link with the patient’s ID)
+
+    Doctor
+
+·         Login
+
+·         A list of their own appointment on that day
+
+·         In one specific appointment, write the prescription and assign or select what kind of medicines the patient needs
+
+    Pharmacy
+
+·         Login
+
+·         List of the medicine and its current inventory
+
+·         Order page for ordering medicine from PPs
+
+·         Pharmacy collect and prepare the medicine for the patient according to their prescription ID or appointment ID so that the information won’t be shared but only doctors and pharmacies are allowed to see it
+
+    PP
+
+·         Login
+
+·         List of orders they received and confirm if they decide to accept the order and ship to the pharmacy.
+
+long word for testing 64 character constraint: 
+Donau­dampf­schiffahrts­elektrizitäten­haupt­betriebs­werk­bau­unter­beamten­gesellschaft 

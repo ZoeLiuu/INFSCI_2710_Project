@@ -1,0 +1,66 @@
+{% extends "base.html"%}
+{% from 'bootstrap/nav.html' import render_nav_item %}
+
+
+{% block navbar %}
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="{{url_for('index')}}">SmartPharm</a>
+        <ul class="nav navbar-nav">
+            {{ render_nav_item('patient_register', 'patient registration') }}
+            {{ render_nav_item('doctor_register', 'doctor registration') }}
+            {{ render_nav_item('pharmacy_register', 'pharmacy registration') }}
+            {{ render_nav_item('plant_register', 'plant registration') }}
+            {{ render_nav_item('login', 'login') }}
+            {{ render_nav_item('logout', 'logout') }}
+        </ul>
+    </div>
+</nav>
+
+{% endblock  %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="card h-100">
+            <img class="card-img-top">
+            <div class="card-body">
+                <h4 class="card-title">Patient Home</h4>
+                <p class="card-text">Please login as a Patient first <br>
+                {{text}}</p>
+                <a class="btn btn-outline-primary" href="{{url_for('pat_home')}}">Go</a>
+            </div>
+        </div>
+
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title">Doctor Home</h4>
+                <p class="card-text">Please login as a Doctor first <br>
+                {{text}}</p>
+                <a class="btn btn-outline-primary" href="{{url_for('doc_home')}}">Go</a>
+            </div>
+        </div>
+
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title">Pharmacy Home</h4>
+                <p class="card-text">Please login as a Pharmacy first <br>
+                {{text}}</p>
+                <a class="btn btn-outline-primary" href="{{url_for('pharm_home')}}">Go</a>
+            </div>
+        </div>
+
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title">Plant Home</h4>
+                <p class="card-text">Please login as a Plant first <br>
+                {{text}}</p>
+                <a class="btn btn-outline-primary" href="{{url_for('plant_home')}}">Go</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}

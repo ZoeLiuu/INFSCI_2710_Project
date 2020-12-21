@@ -1,0 +1,22 @@
+{% extends 'pharmacy_view.html' %}
+
+{% block content %}
+    
+
+    {% for medicine in inv %}
+
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title">{{medicine.medicine.m_medicine}}</h4>
+                <h4 class="card-subtitle">Type: {{medicine.medicine.category}}</h4>
+                <p class="card-text">
+                    Stock: {{medicine.pharm_inven.quant}} <br>
+                    Price: {{medicine.pharm_inven.price}}                  
+                </p>
+            </div>
+        </div>
+        
+    {% endfor %}
+
+
+{% endblock  %}

@@ -1,0 +1,16 @@
+{% extends 'plant_view.html' %}
+
+{% block content %}
+
+<ul class = "list-group">
+
+    {% for shipment in shipments %}
+
+    <li class="list-group-item">Shipment number {{shipment.s_id}} to {{shipment.pc_id}} shipped on {{shipment.s_ship_date}}</li>
+        
+    {% endfor %}
+
+</ul>
+
+{% endblock  %}
+ 

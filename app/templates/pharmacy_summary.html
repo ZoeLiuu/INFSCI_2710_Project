@@ -1,0 +1,28 @@
+{% extends "pharmacy_view.html"%}
+
+{% block content %}
+    
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Summary Measure</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">number of different products</th>
+            <td> {{summary_measures['unique_medicine_quant']}}</td>
+        </tr>
+        <tr>
+            <th scope="row">total number of products</th>
+            <td> {{summary_measures['total_medicine_quant']}}</td>
+        </tr>
+        <tr>
+            <th scope="row">total inventory value</th>
+            <td> {{summary_measures['total_stock_value']}}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock  %}

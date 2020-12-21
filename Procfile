@@ -1,0 +1,1 @@
+web: gunicorn app:smartpharm-infsci2710

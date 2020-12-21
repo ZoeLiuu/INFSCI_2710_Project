@@ -1,0 +1,16 @@
+{% extends "patient_view.html" %}
+
+{% block content %}
+
+<ul class = "list-group">
+
+    {% for apt in appointments %}
+
+    <li class="list-group-item">You have an appointment on {{apt.appointment.apt_date}} at {{apt.appointment.apt_time}} with Dr. {{apt.doctor.doc_last_name}}</li>
+
+        
+    {% endfor %}
+
+</ul>
+
+{% endblock  %}
